@@ -133,7 +133,7 @@ export default function Home() {
 
         <div className="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center relative z-10">
           {/* Left Text Column */}
-          <div className="md:col-span-7 text-left flex flex-col items-start">
+          <div className="md:col-span-7 text-center md:text-left flex flex-col items-center md:items-start">
             <Badge
               variant="primary"
               size="md"
@@ -144,10 +144,10 @@ export default function Home() {
             <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight text-white">
               Pusat Hasil Alam & <span className="text-ochre-light italic font-serif">Karya Anyaman</span> Desa Caringin
             </h1>
-            <p className="font-sans text-base sm:text-lg text-paper-light/80 max-w-xl mt-6 leading-relaxed">
+            <p className="font-sans text-base sm:text-lg text-paper-light/80 max-w-xl mt-6 leading-relaxed mx-auto md:mx-0">
               Membawa kehangatan karya tradisional anyaman bambu, khasiat madu hutan liar murni, dan kelezatan camilan singkong langsung dari teras rumah warga.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 mt-8 w-full sm:w-auto">
+            <div className="flex flex-col sm:flex-row gap-4 mt-8 w-full sm:w-auto justify-center md:justify-start">
               <a href="#best-sellers" className="w-full sm:w-auto">
                 <Button variant="primary" size="lg" className="w-full shadow-lg shadow-ochre/25">
                   Belanja Sekarang
