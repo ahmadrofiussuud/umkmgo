@@ -117,23 +117,24 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Organic Curved Hill Divider at bottom of Hero - Inverse filled to blend top part green, bottom transparent */}
-        <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-[0] z-10 select-none pointer-events-none">
-          <svg 
-            className="relative block w-full h-[32px] sm:h-[48px] md:h-[64px] border-none outline-none" 
-            viewBox="0 0 1200 120" 
-            preserveAspectRatio="none"
-            shapeRendering="geometricPrecision"
-          >
-            <path
-              d="M0,0 C150,90 350,120 600,120 C850,120 1050,90 1200,0 L1200,0 L0,0 Z"
-              fill="#1B2E2B"
-              stroke="none"
-              strokeWidth="0"
-            />
-          </svg>
-        </div>
       </header>
+
+      {/* Organic Curved Hill Divider - Sibling to Hero to allow transparent batik overflow */}
+      <div className="relative w-full h-[32px] sm:h-[48px] md:h-[64px] -mt-[32px] sm:-mt-[48px] md:-mt-[64px] overflow-hidden leading-[0] z-10 select-none pointer-events-none">
+        <svg 
+          className="relative block w-full h-full border-none outline-none" 
+          viewBox="0 0 1200 120" 
+          preserveAspectRatio="none"
+          shapeRendering="geometricPrecision"
+        >
+          <path
+            d="M0,0 C150,90 350,120 600,120 C850,120 1050,90 1200,0 L1200,0 L0,0 Z"
+            fill="#1B2E2B"
+            stroke="none"
+            strokeWidth="0"
+          />
+        </svg>
+      </div>
 
       {/* Signature Element: Village Map SVG Connectors */}
 
