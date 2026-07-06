@@ -10,20 +10,6 @@
 body {
   background-color: var(--background);
   color: var(--foreground);
-  position: relative;
-}
-
-/* Tekstur Batik Halus pada Latar Belakang (Transparansi Rendah) */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -50;
-  background-image: url("/images/batik_pattern.png");
-  background-repeat: repeat;
-  background-size: 160px 160px;
-  opacity: 0.018; /* 1.8% opacity - memberikan efek tekstur kertas batik tulis tanpa mengganggu kontras teks */
-  pointer-events: none;
 }
 
 /* Aksesibilitas: Hormati prefers-reduced-motion */
@@ -37,6 +23,5 @@ body::before {
     background-attachment: initial !important;
     scroll-behavior: auto !important;
     transition-delay: 0s !important;
-    transition-duration: 0s !important;
   }
 }

@@ -8,7 +8,16 @@ import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-paper text-ink flex flex-col">
+    <div className="min-h-screen bg-paper text-ink flex flex-col relative z-0">
+      {/* Batik Pattern Overlay for textured background */}
+      <div
+        className="absolute inset-0 -z-10 pointer-events-none opacity-[0.038] mix-blend-multiply"
+        style={{
+          backgroundImage: "url('/images/batik_pattern.png')",
+          backgroundRepeat: "repeat",
+          backgroundSize: "160px 160px",
+        }}
+      />
       {/* Transparent Navigation Bar overlaying Hero */}
       <nav className="absolute top-0 left-0 right-0 z-50 bg-transparent py-6 px-4 sm:px-8 md:px-16 flex items-center justify-between">
         <a href="#" className="font-display text-xl font-black tracking-tight text-white hover:text-ochre-light transition-colors">
