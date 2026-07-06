@@ -379,17 +379,21 @@ export default function Home() {
                   const isValid = !!waUrl;
 
                   return (
-                    <Card key={product.id} variant="default" className="flex flex-col h-full bg-paper-light/50">
-                      {/* Dummy image representation with premium gradients */}
-                      <div className="aspect-[4/3] bg-gradient-to-br from-ochre/5 to-clay/10 w-full flex items-center justify-center border-b border-ink/10 relative p-4 text-center">
+                    <Card key={product.id} variant="default" className="flex flex-col h-full bg-paper-light/50 group hover:shadow-md transition-all duration-300">
+                      {/* Gambar Produk */}
+                      <div className="aspect-[4/3] bg-ink/5 rounded-t-lg relative overflow-hidden border-b border-ink/10">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={product.gambar}
+                          alt={product.nama}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          loading="lazy"
+                        />
                         <div className="absolute top-3 left-3">
                           <Badge variant="outline" size="sm" className="bg-paper-light/80 backdrop-blur-sm">
                             {product.id}
                           </Badge>
                         </div>
-                        <span className="font-display text-sm text-ink/40 font-bold italic">
-                          {product.nama}
-                        </span>
                       </div>
 
                       <CardBody className="p-5 flex flex-col flex-1">
