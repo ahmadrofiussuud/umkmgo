@@ -18,6 +18,33 @@ export default function Home() {
           backgroundSize: "160px 160px",
         }}
       />
+      {/* Large Organic Flowing Batik watermark graphics on sides (like shadow clouds/flowers) */}
+      {/* Floating Kawung Batik circle pattern on left */}
+      <div className="absolute left-0 top-[25%] -translate-x-1/2 w-[350px] sm:w-[500px] h-[350px] sm:h-[500px] opacity-[0.025] mix-blend-multiply pointer-events-none -z-10 text-ochre">
+        <svg className="w-full h-full" viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="1.5">
+          <circle cx="100" cy="100" r="80" />
+          <circle cx="100" cy="20" r="80" />
+          <circle cx="100" cy="180" r="80" />
+          <circle cx="20" cy="100" r="80" />
+          <circle cx="180" cy="100" r="80" />
+          <circle cx="50" cy="50" r="40" />
+          <circle cx="150" cy="50" r="40" />
+          <circle cx="50" cy="150" r="40" />
+          <circle cx="150" cy="150" r="40" />
+          <circle cx="100" cy="100" r="15" fill="currentColor" opacity="0.5" />
+        </svg>
+      </div>
+
+      {/* Floating Megamendung Cloud-wave pattern on right */}
+      <div className="absolute right-0 top-[60%] translate-x-1/4 w-[380px] sm:w-[550px] h-[250px] sm:h-[400px] opacity-[0.025] mix-blend-multiply pointer-events-none -z-10 text-leaf">
+        <svg className="w-full h-full" viewBox="0 0 200 120" fill="none" stroke="currentColor" strokeWidth="1.5">
+          {/* Concentric cloud patterns */}
+          <path d="M10 90 C 35 60, 75 60, 95 80 C 115 100, 155 100, 175 80 C 190 65, 195 75, 200 90" />
+          <path d="M20 80 C 42 53, 78 53, 98 70 C 118 87, 150 87, 170 70 C 183 57, 188 65, 192 80" />
+          <path d="M30 70 C 49 46, 81 46, 101 60 C 121 74, 145 74, 165 60 C 176 49, 181 55, 184 70" />
+          <path d="M40 60 C 56 39, 84 39, 104 50 C 124 61, 140 61, 160 50" />
+        </svg>
+      </div>
       {/* Transparent Navigation Bar overlaying Hero */}
       <nav className="absolute top-0 left-0 right-0 z-50 bg-transparent py-6 px-4 sm:px-8 md:px-16 flex items-center justify-between">
         <a href="#" className="font-display text-xl font-black tracking-tight text-white hover:text-ochre-light transition-colors">
@@ -86,11 +113,18 @@ export default function Home() {
         </div>
 
         {/* Organic Curved Hill Divider at bottom of Hero */}
-        <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-[0] z-10 translate-y-[1px] select-none pointer-events-none">
-          <svg className="relative block w-full h-[30px] sm:h-[45px] md:h-[60px]" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <div className="absolute -bottom-1.5 left-0 right-0 w-full overflow-hidden leading-[0] z-10 select-none pointer-events-none scale-y-[1.10] translate-y-[2px]">
+          <svg 
+            className="relative block w-full h-[32px] sm:h-[48px] md:h-[64px] border-none outline-none" 
+            viewBox="0 0 1200 120" 
+            preserveAspectRatio="none"
+            shapeRendering="geometricPrecision"
+          >
             <path
               d="M0,0 C150,90 350,120 600,120 C850,120 1050,90 1200,0 L1200,120 L0,120 Z"
               fill="#F3ECD8"
+              stroke="none"
+              strokeWidth="0"
             />
           </svg>
         </div>
