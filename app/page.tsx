@@ -65,6 +65,9 @@ export default function Home() {
           <a href="#daftar-kios" className="text-white/80 hover:text-ochre-light transition-colors">
             Daftar Kios
           </a>
+          <a href="/contoh" className="text-white/80 hover:text-ochre-light transition-colors">
+            Contoh Layout
+          </a>
         </div>
         <div>
           <Badge variant="outline" size="md" className="bg-white/10 text-white border-white/20">
