@@ -9,73 +9,81 @@ import { ScrollReveal } from "@/components/ui/scroll-reveal";
 export default function Home() {
   return (
     <div className="min-h-screen bg-paper text-ink flex flex-col">
-      {/* Sticky Navigation Bar */}
-      <nav className="sticky top-0 bg-paper/85 backdrop-blur-md z-50 border-b border-ink/5 py-4 px-4 sm:px-8 md:px-16 flex items-center justify-between">
-        <a href="#" className="font-display text-xl font-black tracking-tight text-ink hover:opacity-90">
+      {/* Transparent Navigation Bar overlaying Hero */}
+      <nav className="absolute top-0 left-0 right-0 z-50 bg-transparent py-6 px-4 sm:px-8 md:px-16 flex items-center justify-between">
+        <a href="#" className="font-display text-xl font-black tracking-tight text-white hover:text-ochre-light transition-colors">
           Pasar UMKM Desa
         </a>
         <div className="hidden md:flex items-center gap-8 font-sans font-semibold text-sm">
-          <a href="#" className="text-ink hover:text-ochre transition-colors">
+          <a href="#" className="text-white/80 hover:text-ochre-light transition-colors">
             Beranda
           </a>
-          <a href="#peta-rute" className="text-ink hover:text-ochre transition-colors">
+          <a href="#peta-rute" className="text-white/80 hover:text-ochre-light transition-colors">
             Rute Kios
           </a>
-          <a href="#daftar-kios" className="text-ink hover:text-ochre transition-colors">
+          <a href="#daftar-kios" className="text-white/80 hover:text-ochre-light transition-colors">
             Daftar Kios
           </a>
         </div>
         <div>
-          <Badge variant="dark" size="md">
-            Desa Caringin
+          <Badge variant="outline" size="md" className="bg-white/10 text-white border-white/20">
+            📍 Desa Caringin
           </Badge>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <header className="relative w-full bg-ink text-paper-light overflow-hidden py-24 sm:py-32 md:py-40 px-4 sm:px-8 md:px-16">
+      <header className="relative z-0 w-full bg-ink text-paper-light overflow-hidden pt-36 pb-28 sm:pt-44 sm:pb-36 md:pt-52 md:pb-44 px-4 sm:px-8 md:px-16 text-center flex flex-col items-center justify-center">
         {/* Background Village Image Overlay */}
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-40 -z-20"
+          className="absolute inset-0 bg-cover bg-center opacity-35 -z-20 scale-105 transition-transform duration-[10s] ease-out"
           style={{ backgroundImage: "url('/images/foto_desa.jpg')" }}
         />
-        {/* Dark Gradient Overlay for optimal readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/80 to-transparent -z-10" />
+        {/* Dark Dim Overlay for centered text contrast */}
+        <div className="absolute inset-0 bg-gradient-to-b from-ink/80 via-ink/65 to-ink -z-10" />
 
-        {/* Content Wrapper aligned with max-width content below */}
-        <div className="max-w-6xl mx-auto w-full text-left relative z-10 flex flex-col items-start">
+        {/* Content Wrapper aligned with max-width content below, centered */}
+        <div className="max-w-6xl mx-auto w-full text-center relative z-10 flex flex-col items-center justify-center">
           <Badge
             variant="primary"
             size="md"
-            className="mb-4 bg-ochre/20 text-ochre-light border border-ochre-light/20"
+            className="mb-6 bg-ochre/20 text-ochre-light border border-ochre-light/20 flex items-center gap-1.5"
           >
-            Platform Pemasaran Digital Desa
+            🍃 Platform Pemasaran Digital Desa
           </Badge>
-          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-black tracking-tight max-w-3xl leading-tight text-white">
-            Menghubungkan <span className="text-ochre-light">Karya Terbaik Desa</span> Langsung ke
-            Tangan Anda
+          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-black tracking-tight max-w-4xl leading-tight text-white">
+            Menghubungkan <span className="text-ochre-light italic font-serif">Karya Terbaik Desa</span> Langsung ke Genggaman Anda
           </h1>
           <p className="font-sans text-base sm:text-lg md:text-xl text-paper-light/80 max-w-2xl mt-6 leading-relaxed">
             Temukan produk-produk unggulan hasil karya warga desa Caringin. Mulai dari madu mentah
-            alami, kerajinan anyaman bambu, hingga camilan keripik renyah. Pesan langsung via WhatsApp
-            tanpa perantara.
+            alami, kerajinan anyaman bambu, hingga camilan keripik renyah. Pesan langsung via WhatsApp.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 mt-10 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row gap-4 mt-10 w-full sm:w-auto justify-center">
             <a href="#peta-rute" className="w-full sm:w-auto">
-              <Button variant="primary" size="lg" className="w-full">
-                Jelajahi Rute Desa
+              <Button variant="primary" size="lg" className="w-full shadow-lg shadow-ochre/25">
+                Jelajahi Rute Desa 🗺️
               </Button>
             </a>
             <a href="#daftar-kios" className="w-full sm:w-auto">
               <Button
                 variant="ghost"
                 size="lg"
-                className="w-full !text-paper-light border border-paper-light/20 hover:!bg-paper-light/10 focus-visible:!ring-paper-light"
+                className="w-full !text-paper-light border border-paper-light/25 hover:!bg-paper-light/10 focus-visible:!ring-paper-light transition-all"
               >
-                Langsung Lihat Kios
+                Lihat Daftar Kios 🏪
               </Button>
             </a>
           </div>
+        </div>
+
+        {/* Organic Curved Hill Divider at bottom of Hero */}
+        <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-[0] z-10 translate-y-[1px] select-none pointer-events-none">
+          <svg className="relative block w-full h-[30px] sm:h-[45px] md:h-[60px]" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path
+              d="M0,0 C150,90 350,120 600,120 C850,120 1050,90 1200,0 L1200,120 L0,120 Z"
+              fill="#F3ECD8"
+            />
+          </svg>
         </div>
       </header>
 
