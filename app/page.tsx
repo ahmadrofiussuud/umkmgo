@@ -33,7 +33,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <header className="relative py-16 sm:py-24 px-4 sm:px-8 md:px-16 max-w-6xl mx-auto text-center flex flex-col items-center justify-center overflow-hidden rounded-2xl mt-4 border border-ink/5">
+      <header className="relative z-0 py-16 sm:py-24 px-4 sm:px-8 md:px-16 max-w-6xl mx-auto text-center flex flex-col items-center justify-center overflow-hidden rounded-2xl mt-4 border border-ink/5">
         {/* Background Color Overlay */}
         <div className="absolute inset-0 -z-30 bg-paper-light/50" />
         {/* Background Village Image Overlay */}
