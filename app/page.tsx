@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardBody, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { umkmList } from "@/data/umkm";
+import { generateWhatsAppUrl } from "@/lib/whatsapp";
 
 export default function Home() {
   return (
@@ -243,39 +244,52 @@ export default function Home() {
 
               {/* Product Card Grid */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
-                {umkm.produk.map((product) => (
-                  <Card key={product.id} variant="default" className="flex flex-col h-full bg-paper-light/50">
-                    {/* Dummy image representation with premium gradients */}
-                    <div className="aspect-[4/3] bg-gradient-to-br from-ochre/5 to-clay/10 w-full flex items-center justify-center border-b border-ink/10 relative p-4 text-center">
-                      <div className="absolute top-3 left-3">
-                        <Badge variant="outline" size="sm" className="bg-paper-light/80 backdrop-blur-sm">
-                          {product.id}
-                        </Badge>
-                      </div>
-                      <span className="font-display text-sm text-ink/40 font-bold italic">
-                        {product.nama}
-                      </span>
-                    </div>
+                {umkm.produk.map((product) => {
+                  const waUrl = generateWhatsAppUrl(umkm.nama, product.nama, umkm.nomorWhatsApp);
+                  const isValid = !!waUrl;
 
-                    <CardBody className="p-5 flex flex-col flex-1">
-                      <h4 className="font-display text-lg font-bold text-ink leading-tight mb-2">
-                        {product.nama}
-                      </h4>
-                      <p className="font-sans text-xs text-ink/75 leading-relaxed line-clamp-3 mb-4 flex-1">
-                        {product.deskripsi}
-                      </p>
-                      <div className="font-mono text-base font-bold text-clay border-t border-ink/5 pt-3">
-                        Rp {product.harga.toLocaleString("id-ID")},-
+                  return (
+                    <Card key={product.id} variant="default" className="flex flex-col h-full bg-paper-light/50">
+                      {/* Dummy image representation with premium gradients */}
+                      <div className="aspect-[4/3] bg-gradient-to-br from-ochre/5 to-clay/10 w-full flex items-center justify-center border-b border-ink/10 relative p-4 text-center">
+                        <div className="absolute top-3 left-3">
+                          <Badge variant="outline" size="sm" className="bg-paper-light/80 backdrop-blur-sm">
+                            {product.id}
+                          </Badge>
+                        </div>
+                        <span className="font-display text-sm text-ink/40 font-bold italic">
+                          {product.nama}
+                        </span>
                       </div>
-                    </CardBody>
 
-                    <CardFooter className="pt-0 p-5">
-                      <Button variant="action" size="sm" className="w-full">
-                        Pesan via WhatsApp
-                      </Button>
-                    </CardFooter>
-                  </Card>
-                ))}
+                      <CardBody className="p-5 flex flex-col flex-1">
+                        <h4 className="font-display text-lg font-bold text-ink leading-tight mb-2">
+                          {product.nama}
+                        </h4>
+                        <p className="font-sans text-xs text-ink/75 leading-relaxed line-clamp-3 mb-4 flex-1">
+                          {product.deskripsi}
+                        </p>
+                        <div className="font-mono text-base font-bold text-clay border-t border-ink/5 pt-3">
+                          Rp {product.harga.toLocaleString("id-ID")},-
+                        </div>
+                      </CardBody>
+
+                      <CardFooter className="pt-0 p-5">
+                        {isValid ? (
+                          <a href={waUrl} target="_blank" rel="noopener noreferrer" className="w-full">
+                            <Button variant="action" size="sm" className="w-full">
+                              Pesan via WhatsApp
+                            </Button>
+                          </a>
+                        ) : (
+                          <Button variant="action" size="sm" className="w-full" disabled>
+                            Nomor WA Tidak Valid
+                          </Button>
+                        )}
+                      </CardFooter>
+                    </Card>
+                  );
+                })}
               </div>
             </div>
           ))}
