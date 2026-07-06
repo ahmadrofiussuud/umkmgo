@@ -33,39 +33,49 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <header className="relative z-0 py-16 sm:py-24 px-4 sm:px-8 md:px-16 max-w-6xl mx-auto text-center flex flex-col items-center justify-center overflow-hidden rounded-2xl mt-4 border border-ink/5">
-        {/* Background Color Overlay */}
-        <div className="absolute inset-0 -z-30 bg-paper-light/50" />
+      <header className="relative w-full bg-ink text-paper-light overflow-hidden py-24 sm:py-32 md:py-40 px-4 sm:px-8 md:px-16">
         {/* Background Village Image Overlay */}
         <div
-          className="absolute inset-0 -z-10 bg-cover bg-center opacity-25"
+          className="absolute inset-0 bg-cover bg-center opacity-40 -z-20"
           style={{ backgroundImage: "url('/images/foto_desa.jpg')" }}
         />
-        {/* Background decorative elements */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[350px] bg-ochre/5 blur-[120px] rounded-full pointer-events-none -z-20" />
+        {/* Dark Gradient Overlay for optimal readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/80 to-transparent -z-10" />
 
-        <Badge variant="primary" size="md" className="mb-4">
-          Platform Pemasaran Digital Desa
-        </Badge>
-        <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight max-w-4xl leading-tight">
-          Menghubungkan Karya Terbaik Desa Langsung ke Tangan Anda
-        </h1>
-        <p className="font-sans text-sm sm:text-base md:text-lg lg:text-xl text-ink/80 max-w-2xl mt-4 sm:mt-6 leading-relaxed">
-          Temukan produk-produk unggulan terbaik hasil karya warga desa Caringin. Mulai dari madu
-          mentah alami, kerajinan anyaman bambu, hingga camilan keripik renyah. Pesan langsung
-          via WhatsApp tanpa perantara.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-8 w-full sm:w-auto justify-center px-4 sm:px-0">
-          <a href="#peta-rute" className="w-full sm:w-auto">
-            <Button variant="primary" size="lg" className="w-full">
-              Jelajahi Rute Desa
-            </Button>
-          </a>
-          <a href="#daftar-kios" className="w-full sm:w-auto">
-            <Button variant="ghost" size="lg" className="w-full">
-              Langsung Lihat Kios
-            </Button>
-          </a>
+        {/* Content Wrapper aligned with max-width content below */}
+        <div className="max-w-6xl mx-auto w-full text-left relative z-10 flex flex-col items-start">
+          <Badge
+            variant="primary"
+            size="md"
+            className="mb-4 bg-ochre/20 text-ochre-light border border-ochre-light/20"
+          >
+            Platform Pemasaran Digital Desa
+          </Badge>
+          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-black tracking-tight max-w-3xl leading-tight text-white">
+            Menghubungkan <span className="text-ochre-light">Karya Terbaik Desa</span> Langsung ke
+            Tangan Anda
+          </h1>
+          <p className="font-sans text-base sm:text-lg md:text-xl text-paper-light/80 max-w-2xl mt-6 leading-relaxed">
+            Temukan produk-produk unggulan hasil karya warga desa Caringin. Mulai dari madu mentah
+            alami, kerajinan anyaman bambu, hingga camilan keripik renyah. Pesan langsung via WhatsApp
+            tanpa perantara.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 mt-10 w-full sm:w-auto">
+            <a href="#peta-rute" className="w-full sm:w-auto">
+              <Button variant="primary" size="lg" className="w-full">
+                Jelajahi Rute Desa
+              </Button>
+            </a>
+            <a href="#daftar-kios" className="w-full sm:w-auto">
+              <Button
+                variant="ghost"
+                size="lg"
+                className="w-full !text-paper-light border border-paper-light/20 hover:!bg-paper-light/10 focus-visible:!ring-paper-light"
+              >
+                Langsung Lihat Kios
+              </Button>
+            </a>
+          </div>
         </div>
       </header>
 
