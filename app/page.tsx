@@ -97,6 +97,7 @@ export default function Home() {
       </header>
 
       {/* Signature Element: Village Map SVG Connectors */}
+
       <section id="peta-rute" className="py-12 sm:py-16 px-4 sm:px-8 md:px-16 max-w-6xl mx-auto w-full scroll-mt-20">
         <div className="text-center mb-12">
           <Badge variant="secondary" size="md" className="mb-2">
@@ -342,11 +343,23 @@ export default function Home() {
 
       {/* Main Kiosk Content List */}
       <section id="daftar-kios" className="py-12 sm:py-16 px-4 sm:px-8 md:px-16 max-w-6xl mx-auto w-full scroll-mt-20 flex-1">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-ink/10 pb-4 mb-12 sm:mb-16 gap-3">
-          <h2 className="font-display text-2xl sm:text-3xl font-extrabold tracking-tight">Daftar Kios Pasar Desa</h2>
-          <span className="font-mono text-xs font-bold text-ochre uppercase tracking-wider">
-            {umkmList.length} KIOS AKTIF
-          </span>
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <Badge variant="outline" size="md" className="mb-3 border-ochre/30 text-ochre">
+            Pilihan UMKM Terbaik ({umkmList.length} Kios Aktif)
+          </Badge>
+          <h2 className="font-display text-3xl sm:text-4xl font-black text-ink leading-tight">
+            Daftar Kios Pasar Desa
+          </h2>
+          <div className="flex items-center justify-center gap-3 mt-4">
+            <div className="h-[1px] w-12 bg-ink/15" />
+            <div className="w-1.5 h-1.5 rounded-full bg-ochre/50" />
+            <div className="w-2.5 h-2.5 rounded-full bg-ochre" />
+            <div className="w-1.5 h-1.5 rounded-full bg-ochre/50" />
+            <div className="h-[1px] w-12 bg-ink/15" />
+          </div>
+          <p className="font-sans text-sm sm:text-base text-ink/75 mt-4 leading-relaxed">
+            Jelajahi produk-produk kearifan lokal buatan tangan warga desa Caringin. Hubungi langsung kontak WhatsApp tiap kios untuk pemesanan cepat.
+          </p>
         </div>
 
         <div className="space-y-16 sm:space-y-24">
