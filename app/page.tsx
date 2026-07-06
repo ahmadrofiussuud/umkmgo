@@ -33,14 +33,16 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <header className="relative py-16 sm:py-24 px-4 sm:px-8 md:px-16 max-w-6xl mx-auto text-center flex flex-col items-center justify-center overflow-hidden rounded-2xl mt-4 border border-ink/5 bg-paper-light/20">
+      <header className="relative py-16 sm:py-24 px-4 sm:px-8 md:px-16 max-w-6xl mx-auto text-center flex flex-col items-center justify-center overflow-hidden rounded-2xl mt-4 border border-ink/5">
+        {/* Background Color Overlay */}
+        <div className="absolute inset-0 -z-30 bg-paper-light/50" />
         {/* Background Village Image Overlay */}
         <div
-          className="absolute inset-0 -z-10 bg-cover bg-center opacity-15"
+          className="absolute inset-0 -z-10 bg-cover bg-center opacity-25"
           style={{ backgroundImage: "url('/images/foto_desa.jpg')" }}
         />
         {/* Background decorative elements */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[350px] bg-ochre/5 blur-[120px] rounded-full pointer-events-none -z-10" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[350px] bg-ochre/5 blur-[120px] rounded-full pointer-events-none -z-20" />
 
         <Badge variant="primary" size="md" className="mb-4">
           Platform Pemasaran Digital Desa
