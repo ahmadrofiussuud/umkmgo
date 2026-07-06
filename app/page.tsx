@@ -27,7 +27,7 @@ export default function Home() {
         </div>
         <div>
           <Badge variant="outline" size="md" className="bg-white/10 text-white border-white/20">
-            📍 Desa Caringin
+            Desa Caringin
           </Badge>
         </div>
       </nav>
@@ -47,9 +47,9 @@ export default function Home() {
           <Badge
             variant="primary"
             size="md"
-            className="mb-6 bg-ochre/20 text-ochre-light border border-ochre-light/20 flex items-center gap-1.5"
+            className="mb-6 bg-ochre/20 text-ochre-light border border-ochre-light/20 flex items-center"
           >
-            🍃 Platform Pemasaran Digital Desa
+            Platform Pemasaran Digital Desa
           </Badge>
           <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-black tracking-tight max-w-4xl leading-tight text-white">
             Menghubungkan <span className="text-ochre-light italic font-serif">Karya Terbaik Desa</span> Langsung ke Genggaman Anda
@@ -61,7 +61,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 mt-10 w-full sm:w-auto justify-center">
             <a href="#peta-rute" className="w-full sm:w-auto">
               <Button variant="primary" size="lg" className="w-full shadow-lg shadow-ochre/25">
-                Jelajahi Rute Desa 🗺️
+                Jelajahi Rute Desa
               </Button>
             </a>
             <a href="#daftar-kios" className="w-full sm:w-auto">
@@ -70,7 +70,7 @@ export default function Home() {
                 size="lg"
                 className="w-full !text-paper-light border border-paper-light/25 hover:!bg-paper-light/10 focus-visible:!ring-paper-light transition-all"
               >
-                Lihat Daftar Kios 🏪
+                Lihat Daftar Kios
               </Button>
             </a>
           </div>
@@ -357,11 +357,16 @@ export default function Home() {
                 </div>
                 <div className="flex flex-col items-start md:items-end justify-center font-mono text-xs text-ink/70 gap-2 border-t md:border-t-0 md:border-l border-ink/10 pt-4 md:pt-0 md:pl-6 shrink-0">
                   <div className="flex items-center gap-1.5">
-                    <span className="text-ochre">📍</span>
+                    <svg className="w-3.5 h-3.5 text-ochre shrink-0" fill="none" stroke="currentColor" strokeWidth="2.2" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
                     <span>{umkm.lokasi}</span>
                   </div>
                   <div className="flex items-center gap-1.5">
-                    <span className="text-leaf">💬</span>
+                    <svg className="w-3.5 h-3.5 text-leaf shrink-0" fill="none" stroke="currentColor" strokeWidth="2.2" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                    </svg>
                     <span>+{umkm.nomorWhatsApp}</span>
                   </div>
                 </div>
