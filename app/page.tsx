@@ -18,6 +18,11 @@ export default function Home() {
           backgroundSize: "160px 160px",
         }}
       />
+      {/* Soft blurry organic color blobs in the background for depth and flow */}
+      <div className="absolute top-[18%] left-[5%] w-[350px] sm:w-[500px] h-[350px] sm:h-[500px] rounded-full bg-ochre/10 blur-[100px] sm:blur-[140px] pointer-events-none -z-10" />
+      <div className="absolute top-[48%] right-[2%] w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] rounded-full bg-leaf/8 blur-[120px] sm:blur-[160px] pointer-events-none -z-10" />
+      <div className="absolute top-[75%] left-[8%] w-[350px] sm:w-[550px] h-[350px] sm:h-[550px] rounded-full bg-clay/8 blur-[100px] sm:blur-[140px] pointer-events-none -z-10" />
+
       {/* Large Organic Flowing Batik watermark graphics on sides (like shadow clouds/flowers) */}
       {/* Floating Kawung Batik circle pattern on left */}
       <div className="absolute left-0 top-[25%] -translate-x-1/2 w-[350px] sm:w-[500px] h-[350px] sm:h-[500px] opacity-[0.025] mix-blend-multiply pointer-events-none -z-10 text-ochre">
@@ -112,8 +117,8 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Organic Curved Hill Divider at bottom of Hero */}
-        <div className="absolute -bottom-1.5 left-0 right-0 w-full overflow-hidden leading-[0] z-10 select-none pointer-events-none scale-y-[1.10] translate-y-[2px]">
+        {/* Organic Curved Hill Divider at bottom of Hero - Inverse filled to blend top part green, bottom transparent */}
+        <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-[0] z-10 select-none pointer-events-none">
           <svg 
             className="relative block w-full h-[32px] sm:h-[48px] md:h-[64px] border-none outline-none" 
             viewBox="0 0 1200 120" 
@@ -121,8 +126,8 @@ export default function Home() {
             shapeRendering="geometricPrecision"
           >
             <path
-              d="M0,0 C150,90 350,120 600,120 C850,120 1050,90 1200,0 L1200,120 L0,120 Z"
-              fill="#F3ECD8"
+              d="M0,0 C150,90 350,120 600,120 C850,120 1050,90 1200,0 L1200,0 L0,0 Z"
+              fill="#1B2E2B"
               stroke="none"
               strokeWidth="0"
             />
