@@ -11,7 +11,7 @@ export default function Home() {
     <div className="min-h-screen bg-paper text-ink flex flex-col relative z-0">
       {/* Batik Pattern Overlay for textured background */}
       <div
-        className="absolute inset-0 -z-10 pointer-events-none opacity-100 mix-blend-multiply"
+        className="absolute inset-0 -z-10 pointer-events-none opacity-[0.30] mix-blend-multiply"
         style={{
           backgroundImage: "url('/images/batik_pattern.png')",
           backgroundRepeat: "repeat",
