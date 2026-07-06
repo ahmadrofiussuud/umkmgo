@@ -91,43 +91,45 @@ export default function ContohLayout() {
       <div className="absolute top-[80%] left-[8%] w-[350px] sm:w-[550px] h-[350px] sm:h-[550px] rounded-full bg-clay/6 blur-[100px] sm:blur-[140px] pointer-events-none -z-10" />
 
       {/* 1. Green Top-bar */}
-      <div className="bg-ink text-paper-light py-2 text-center text-xs font-mono tracking-wide px-4 border-b border-white/5 z-20">
+      <div className="relative bg-ink text-paper-light py-2 text-center text-xs font-mono tracking-wide px-4 border-b border-white/5 z-20">
         📢 BAZAAR DESA ACTIVE: Belanja langsung via WA tanpa perantara, dukung ekonomi warga Caringin!
       </div>
 
-      {/* 2. Navigation Bar */}
-      <nav className="bg-paper-light/90 backdrop-blur-md sticky top-0 z-50 border-b border-ink/5 py-4 px-4 sm:px-8 md:px-16 flex items-center justify-between">
-        <a href="/" className="font-display text-xl font-black tracking-tight text-ink hover:text-ochre transition-colors">
+      {/* 2. Navigation Bar - Absolute to overlay Hero */}
+      <nav className="absolute top-10 left-0 right-0 z-50 bg-transparent py-6 px-4 sm:px-8 md:px-16 flex items-center justify-between">
+        <a href="/" className="font-display text-xl font-black tracking-tight text-white hover:text-ochre-light transition-colors">
           Pasar UMKM Desa
         </a>
         <div className="hidden md:flex items-center gap-8 font-sans font-semibold text-sm">
-          <a href="/" className="text-ink/80 hover:text-ochre transition-colors">
+          <a href="/" className="text-white/80 hover:text-ochre-light transition-colors">
             Beranda
           </a>
-          <a href="/#peta-rute" className="text-ink/80 hover:text-ochre transition-colors">
+          <a href="/#peta-rute" className="text-white/80 hover:text-ochre-light transition-colors">
             Rute Kios
           </a>
-          <a href="/#daftar-kios" className="text-ink/80 hover:text-ochre transition-colors">
+          <a href="/#daftar-kios" className="text-white/80 hover:text-ochre-light transition-colors">
             Daftar Kios
           </a>
-          <a href="/contoh" className="text-ochre font-bold transition-colors">
+          <a href="/contoh" className="text-white hover:text-ochre-light font-bold transition-colors">
             Contoh Layout
           </a>
         </div>
         <div>
-          <Badge variant="dark" size="md">
+          <Badge variant="outline" size="md" className="bg-white/10 text-white border-white/20">
             Desa Caringin
           </Badge>
         </div>
       </nav>
 
-      {/* 3. Hero Section (Split Layout) */}
-      <header className="relative w-full bg-ink text-paper-light overflow-hidden pt-20 pb-28 px-4 sm:px-8 md:px-16">
+      {/* 3. Hero Section (Split Layout, matching main header styling) */}
+      <header className="relative z-0 w-full bg-ink text-paper-light overflow-hidden pt-36 pb-28 sm:pt-44 sm:pb-36 md:pt-52 md:pb-44 px-4 sm:px-8 md:px-16">
+        {/* Background Village Image Overlay */}
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-30 -z-20 scale-105"
+          className="absolute inset-0 bg-cover bg-center opacity-35 -z-20 scale-105 transition-transform duration-[10s] ease-out"
           style={{ backgroundImage: "url('/images/foto_desa.jpg')" }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/80 to-transparent -z-10" />
+        {/* Dark Dim Overlay for centered text contrast */}
+        <div className="absolute inset-0 bg-gradient-to-b from-ink/80 via-ink/65 to-ink -z-10" />
 
         <div className="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center relative z-10">
           {/* Left Text Column */}
