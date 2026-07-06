@@ -4,6 +4,7 @@ import { Card, CardHeader, CardBody, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { umkmList } from "@/data/umkm";
 import { generateWhatsAppUrl } from "@/lib/whatsapp";
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 export default function Home() {
   return (
@@ -316,7 +317,7 @@ export default function Home() {
 
         <div className="space-y-16 sm:space-y-24">
           {umkmList.map((umkm, idx) => (
-            <div key={umkm.id} id={umkm.id} className="scroll-mt-24">
+            <ScrollReveal key={umkm.id} id={umkm.id} className="scroll-mt-24">
               {/* Kios Header Container */}
               <div className="bg-paper-light/30 border border-ink/10 rounded-xl p-6 sm:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
                 <div>
@@ -390,7 +391,7 @@ export default function Home() {
                   );
                 })}
               </div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </section>
