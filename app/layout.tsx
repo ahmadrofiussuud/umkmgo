@@ -14,7 +14,7 @@ export default function RootLayout({
   return (
     <html
       lang="id"
-      className="h-full antialiased"
+      className="h-full antialiased scroll-smooth"
     >
       <body className="min-h-full flex flex-col bg-paper text-ink font-sans">{children}</body>
     </html>
