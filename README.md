@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Pasar UMKM Desa
 
-## Getting Started
+Pasar UMKM Desa adalah platform pemasaran digital terintegrasi untuk usaha mikro, kecil, dan menengah (UMKM) tingkat pedesaan. Di platform ini, pengunjung dapat menjelajahi berbagai kios UMKM, melihat detail produk, serta melakukan pemesanan langsung melalui WhatsApp secara otomatis (pre-filled message).
 
-First, run the development server:
+Proyek ini dibangun menggunakan **Next.js 14+ (App Router)** dengan **TypeScript** dan **Tailwind CSS**.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## Fitur & Fondasi
+- **Next.js App Router**: Menggunakan sistem routing berbasis `/app` Next.js terbaru.
+- **Type Safety**: Kontrak data UMKM dan Produk didefinisikan dengan jelas menggunakan TypeScript di `/types/umkm.ts`.
+- **Decoupled Data**: Data UMKM & Produk tidak ditulis keras (hardcoded) di komponen, melainkan dipisah di `/data/umkm.ts` guna memudahkan integrasi CMS / Database di masa mendatang.
+- **Code Consistency**: Terintegrasi dengan **ESLint** dan **Prettier** untuk penulisan kode yang rapi dan seragam.
+
+---
+
+## Struktur Folder
+```text
+umkmgo/
+├── app/                  # Routing Next.js, layout, halaman utama, dan routing global
+├── components/           # Komponen UI modular dan reusable (button, card, dll.)
+├── data/                 # Penyimpanan data dummy (umkm.ts)
+├── lib/                  # Fungsi pembantu / helper (seperti formatter, helper WA)
+├── public/               # File aset statis (gambar, logo, dll.)
+├── types/                # Definisi tipe data TypeScript (umkm.ts)
+├── .prettierrc           # Konfigurasi Prettier
+├── eslint.config.mjs     # Konfigurasi ESLint 9+
+├── next.config.ts        # Konfigurasi Next.js
+└── tsconfig.json         # Konfigurasi compiler TypeScript
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Cara Menjalankan Proyek Secara Lokal
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Prasyarat
+- Node.js versi 18.17.0 ke atas.
+- npm (bawaan dari Node.js).
 
-## Learn More
+### Langkah-langkah
+1. **Clone repositori dan masuk ke direktori proyek**:
+   ```bash
+   cd umkmgo
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. **Instal dependensi**:
+   ```bash
+   npm install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Jalankan server pengembangan (development server)**:
+   ```bash
+   npm run dev
+   ```
+   Buka [http://localhost:3000](http://localhost:3000) pada browser Anda untuk melihat hasilnya.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. **Jalankan pengecekan TypeScript & Linting**:
+   - Pengecekan tipe TypeScript:
+     ```bash
+     npx tsc --noEmit
+     ```
+   - Pemeriksaan standardisasi kode (ESLint):
+     ```bash
+     npm run lint
+     ```
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+5. **Build proyek untuk produksi**:
+   ```bash
+   npm run build
+   ```
