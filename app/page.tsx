@@ -11,7 +11,7 @@ export default function Home() {
     <div className="min-h-screen bg-paper text-ink flex flex-col relative z-0">
       {/* Batik Pattern Overlay for textured background */}
       <div
-        className="absolute inset-0 -z-10 pointer-events-none opacity-[0.038] mix-blend-multiply"
+        className="absolute inset-0 -z-10 pointer-events-none opacity-100 mix-blend-multiply"
         style={{
           backgroundImage: "url('/images/batik_pattern.png')",
           backgroundRepeat: "repeat",
@@ -120,7 +120,7 @@ export default function Home() {
       </header>
 
       {/* Organic Curved Hill Divider - Sibling to Hero to allow transparent batik overflow */}
-      <div className="relative w-full h-[32px] sm:h-[48px] md:h-[64px] -mt-[32px] sm:-mt-[48px] md:-mt-[64px] overflow-hidden leading-[0] z-10 select-none pointer-events-none">
+      <div className="relative w-full h-[32px] sm:h-[48px] md:h-[64px] overflow-hidden leading-[0] z-10 select-none pointer-events-none">
         <svg 
           className="relative block w-full h-full border-none outline-none" 
           viewBox="0 0 1200 120" 
