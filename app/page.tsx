@@ -117,7 +117,7 @@ export default function Home() {
       </nav>
 
       {/* 3. Hero Section (Split Layout, matching main header styling) */}
-      <header className="relative z-0 w-full bg-ink text-paper-light overflow-hidden pt-36 pb-28 sm:pt-44 sm:pb-36 md:pt-52 md:pb-44 px-4 sm:px-8 md:px-16">
+      <header className="relative z-0 w-full bg-ink text-paper-light overflow-hidden pt-28 pb-20 sm:pt-32 sm:pb-24 md:pt-36 md:pb-28 px-4 sm:px-8 md:px-16">
         {/* Background Village Image Overlay */}
         <div
           className="absolute inset-0 bg-cover bg-center opacity-35 -z-20 scale-105 transition-transform duration-[10s] ease-out"
